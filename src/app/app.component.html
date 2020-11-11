@@ -1,0 +1,78 @@
+<h2 align="center">REGISTRO DE TRABAJADORES</h2>
+<form><br/>
+Nombre: <input 
+           class= "form-control" 
+           type="text" 
+           name="nombre"><br/>
+CI: <input
+          class= "form-control" 
+           type="text" 
+           name="ci"><br/>
+ID de empleado: <input
+          class= "form-control" 
+           type="text" 
+           name="id"><br/>
+Area de trabajo: <select formControlName="area" class="form-control">
+      <option disabled>Elija una opcion</option>
+      <option>otros</option>
+      <option *ngFor="let area of areas">{{area}}</option>
+</select><br>
+Profesion: <input 
+           class= "form-control" 
+           type="text" 
+           name="profesion"><br/>
+Anios de trabajo: <input 
+           class= "form-control" 
+           type="number"
+           min=0
+           max=100
+           [(ngModel)]="numero1"
+           name="numero1"><br/>
+Salario por hora(Bs): <input 
+           class= "form-control" 
+           type="number"
+           step="0.1" 
+           [(ngModel)]="numero2"
+           name="numero2"><br/>
+Salario por mes(Bs): <input 
+           class= "form-control" 
+           type="number"
+           step="0.1" 
+           [(ngModel)]="numero3"
+           name="numero3"><br/>
+Tipo de sangre: <select formControlName="area" class="form-control">
+      <option disabled>Elija una opcion</option>
+      <option>seleccione</option>
+      <option *ngFor="let tipo of tipos">{{tipo}}</option>
+</select><br>
+Estatura(Metros): <input 
+           class= "form-control" 
+           type="number"
+           step="0.1" 
+           [(ngModel)]="numero4"
+           name="numero4"><br/>
+Peso(Kg): <input 
+           class= "form-control" 
+           type="number"
+           step="0.1" 
+           [(ngModel)]="numero5"
+           name="numero5"><br/>
+Enfermedad de base: <select formControlName="area" class="form-control">
+      <option disabled>Elija una opcion</option>
+      <option>seleccione</option>
+      <option *ngFor="let enfermedad of enfermedades">{{enfermedad}}</option>
+</select><br>
+Telefono: <input 
+           class= "form-control" 
+           type="text" 
+           name="telefono"><br/>
+Correo: <input 
+           class= "form-control" 
+           type="text" 
+           placeholder="ejemplo@mail.com" 
+           name="correo"><br/>
+ <button class= "btn btn-primary" 
+ (click)="validar()">Guardar</button>
+ 
+</form><br/>
+Mensaje: {{mensaje}}
